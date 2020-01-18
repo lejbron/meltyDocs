@@ -7,12 +7,12 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'youla'
-copyright = '2019, youla'
-author = 'Solntsev Alexey'
+project = 'melty'
+copyright = '2020, MeltyMinds(c)'
+author = 'lejbron'
 
 # The short X.Y version
-version = '2.7'
+version = '0.1'
 # The full version, including alpha/beta/rc tags
 release = '1'
 
@@ -88,7 +88,7 @@ html_static_path = ['_static']
 
 #---sphinx-themes-----
 html_theme = "ydoc_theme"
-html_logo = "_static/css/web_logo.png"
+html_logo = "_images/main/web_logo.png"
 
 html_theme_options = {
 'logo_only':'true'
@@ -96,4 +96,4 @@ html_theme_options = {
 
 
 def setup(app):
-    app.add_stylesheet('css/youlaDocStyles.css')
+    app.add_stylesheet('css/meltyDocs.css')
