@@ -1,14 +1,20 @@
-Руководтсво по сборке и эксплуатации MeltyDIY
-=============================================
+MeltyDIY
+========
+
+Guides
+------
 
 .. toctree::
    :maxdepth: 2
 
-   includeme
-   
-
+   Guides/Melty-AssemblingGuide
 
 Индекс
 ======
 
 * :ref:`genindex`
+
+.. toctree::
+   :maxdepth: 2
+
+   includeme
