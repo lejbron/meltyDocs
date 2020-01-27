@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Калибровка MeltyDIY &mdash; melty 1 documentation</title>
+  <title>Экструдер &mdash; melty 1 documentation</title>
   
 	
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
@@ -38,8 +38,9 @@
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="melty 1 documentation" href="../index.html"/>
-        <link rel="next" title="Troubleshooting" href="Melty-Troubleshooting.html"/>
-        <link rel="prev" title="Расширенные настройки Marlin" href="../Configure/conf_advanced.html"/> 
+        <link rel="up" title="Настройка Marlin" href="conf_index.html"/>
+        <link rel="next" title="Температурные настройки" href="conf_temperature.html"/>
+        <link rel="prev" title="Общие настройки" href="conf_general.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -94,10 +95,17 @@
             
                 <p class="caption"><span class="caption-text">Guides</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="Melty-AssemblingGuide.html">Инструкция по сборке MeltyDIY</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Configure/conf_index.html">Настройка <code class="docutils literal notranslate"><span class="pre">Marlin</span></code></a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Калибровка MeltyDIY</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Melty-Troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Guides/Melty-AssemblingGuide.html">Инструкция по сборке MeltyDIY</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="conf_index.html">Настройка <code class="docutils literal notranslate"><span class="pre">Marlin</span></code></a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="conf_general.html">Общие настройки</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Экструдер</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conf_temperature.html">Температурные настройки</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conf_machine.html">Настройка маханических параметров</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conf_advanced.html">Расширенные настройки Marlin</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Guides/Melty-Calibration.html">Калибровка MeltyDIY</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Guides/Melty-Troubleshooting.html">Troubleshooting</a></li>
 </ul>
 
             
@@ -142,7 +150,9 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Калибровка MeltyDIY</li>
+          <li><a href="conf_index.html">Настройка <code class="docutils literal notranslate"><span class="pre">Marlin</span></code></a> &raquo;</li>
+        
+      <li>Экструдер</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -159,8 +169,27 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="meltydiy">
-<h1>Калибровка MeltyDIY<a class="headerlink" href="#meltydiy" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="id1">
+<h1>Экструдер<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>Количество экструдеров<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#define EXTRUDERS 1</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>Диаметр филамента по умолчанию<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#define DEFAULT_NOMINAL_FILAMENT_DIA 3.0</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>Настройка подачи филамента<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#define PREVENT_COLD_EXTRUSION</span>
+<span class="cp">#define EXTRUDE_MINTEMP 170</span>
+</pre></div>
+</div>
+</div>
 </div>
 
 
@@ -170,10 +199,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="Melty-Troubleshooting.html" class="btn btn-neutral float-right" title="Troubleshooting" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="conf_temperature.html" class="btn btn-neutral float-right" title="Температурные настройки" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../Configure/conf_advanced.html" class="btn btn-neutral" title="Расширенные настройки Marlin" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="conf_general.html" class="btn btn-neutral" title="Общие настройки" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

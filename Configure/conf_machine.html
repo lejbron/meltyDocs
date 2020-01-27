@@ -1,0 +1,375 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Настройка маханических параметров &mdash; melty 1 documentation</title>
+  
+	
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+	
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/meltyDocs.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="melty 1 documentation" href="../index.html"/>
+        <link rel="up" title="Настройка Marlin" href="conf_index.html"/>
+        <link rel="next" title="Расширенные настройки Marlin" href="conf_advanced.html"/>
+        <link rel="prev" title="Температурные настройки" href="conf_temperature.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/web_logo.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Guides</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../Guides/Melty-AssemblingGuide.html">Инструкция по сборке MeltyDIY</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="conf_index.html">Настройка <code class="docutils literal notranslate"><span class="pre">Marlin</span></code></a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="conf_general.html">Общие настройки</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conf_extruder.html">Экструдер</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conf_temperature.html">Температурные настройки</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Настройка маханических параметров</a></li>
+<li class="toctree-l2"><a class="reference internal" href="conf_advanced.html">Расширенные настройки Marlin</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Guides/Melty-Calibration.html">Калибровка MeltyDIY</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Guides/Melty-Troubleshooting.html">Troubleshooting</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">melty</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="conf_index.html">Настройка <code class="docutils literal notranslate"><span class="pre">Marlin</span></code></a> &raquo;</li>
+        
+      <li>Настройка маханических параметров</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>Настройка маханических параметров<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>Концевые выключатели<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>Измените согласно коду ниже.</p>
+<p>Используемые на плате порты</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#define USE_XMIN_PLUG</span>
+<span class="cp">#define USE_YMAX_PLUG</span>
+<span class="cp">#define USE_ZMAX_PLUG</span>
+</pre></div>
+</div>
+<p>Инвертирование направления</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#define X_MIN_ENDSTOP_INVERTING true </span><span class="c1">// Set to true to invert the logic of the endstop.</span>
+<span class="cp">#define Y_MIN_ENDSTOP_INVERTING false </span><span class="c1">// Set to true to invert the logic of the endstop.</span>
+<span class="cp">#define Z_MIN_ENDSTOP_INVERTING false </span><span class="c1">// Set to true to invert the logic of the endstop.</span>
+<span class="cp">#define X_MAX_ENDSTOP_INVERTING false </span><span class="c1">// Set to true to invert the logic of the endstop.</span>
+<span class="cp">#define Y_MAX_ENDSTOP_INVERTING false </span><span class="c1">// Set to true to invert the logic of the endstop.</span>
+<span class="cp">#define Z_MAX_ENDSTOP_INVERTING false </span><span class="c1">// Set to true to invert the logic of the endstop.</span>
+<span class="cp">#define Z_MIN_PROBE_ENDSTOP_INVERTING false </span><span class="c1">// Set to true to invert the logic of the probe.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>Драйверы шаговых моторов<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>Зависит от <em>использумых драйверов</em>.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#define X_DRIVER_TYPE  A4988</span>
+<span class="cp">#define Y_DRIVER_TYPE  A4988</span>
+<span class="cp">#define Z_DRIVER_TYPE  A4988</span>
+<span class="cp">#define E0_DRIVER_TYPE A4988</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>Настройка перемещения по осям<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id5">
+<h3>Шаги перемещения<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="x-y">
+<h4>Оси X и Y<a class="headerlink" href="#x-y" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li>Шаговый двигатель: 200 шагов на оборот, 16 микро-шагов на шаг (ПЕРЕМЫЧКИ)</li>
+<li>Приводной ремень GT2: шаг 2мм</li>
+<li>Шкив: 20 зубьев</li>
+</ul>
+<p>Сколько шагов должен совершить двигатель, чтобы по оси X и Y было совершено
+перемещение ровно в 1 мм:</p>
+<p>(200*16)/(2*20) = 80</p>
+</div>
+<div class="section" id="z">
+<h4>Ось Z<a class="headerlink" href="#z" title="Permalink to this headline">¶</a></h4>
+<ul>
+<li><p class="first">Мотор с интегрированным трапецеидальным винтом:</p>
+<ul class="simple">
+<li>Диаметр 8 мм</li>
+<li>Шаг 2 мм</li>
+<li>Заходность 4</li>
+</ul>
+<p>Количество шагов: (200*16)/(2*4) = 400</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>Ограничение максимальной скорости перемещения<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#define DEFAULT_MAX_FEEDRATE          {300, 300, 5, 25}    </span><span class="c1">// (mm/sec)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id7">
+<h2>Ускорение перемещения по осям<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#define DEFAULT_MAX_ACCELERATION      { 2000, 2000, 100, 10000 }</span>
+
+<span class="cp">#define DEFAULT_ACCELERATION          2000    </span><span class="c1">// X, Y, Z and E acceleration for printing moves</span>
+<span class="cp">#define DEFAULT_RETRACT_ACCELERATION  2000    </span><span class="c1">// E acceleration for retracts</span>
+<span class="cp">#define DEFAULT_TRAVEL_ACCELERATION   2000    </span><span class="c1">// X, Y, Z acceleration for travel (non printing) moves</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id8">
+<h2>Изменение направления вращения моторов<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<p>При необходимости изменить напрвление мотора используйте следующие константы:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#define INVERT_X_DIR false</span>
+<span class="cp">#define INVERT_Y_DIR true</span>
+<span class="cp">#define INVERT_Z_DIR false</span>
+
+<span class="cp">#define INVERT_E0_DIR false</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="homing">
+<h2>Homing<a class="headerlink" href="#homing" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#define X_HOME_DIR -1</span>
+<span class="cp">#define Y_HOME_DIR 1</span>
+<span class="cp">#define Z_HOME_DIR 1</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id9">
+<h2>Указание размера области печати<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#define X_BED_SIZE 190</span>
+<span class="cp">#define Y_BED_SIZE 190</span>
+
+<span class="cp">#define X_MIN_POS 0</span>
+<span class="cp">#define Y_MIN_POS 0</span>
+<span class="cp">#define Z_MIN_POS 0</span>
+<span class="cp">#define X_MAX_POS X_BED_SIZE</span>
+<span class="cp">#define Y_MAX_POS Y_BED_SIZE</span>
+<span class="cp">#define Z_MAX_POS 200</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id10">
+<h2>Отступ по оси Z<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#define HOTEND_OFFSET_Z { 0.0, 1.3 }</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="automatic-bed-leveling">
+<h2>Automatic Bed Leveling<a class="headerlink" href="#automatic-bed-leveling" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>#define PROBE_MANUALLY (878)</li>
+<li>#define MESH_BED_LEVELING (1209)</li>
+<li>#define LCD_BED_LEVELING (1332)</li>
+</ol>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#if ENABLED(LCD_BED_LEVELING)</span>
+  <span class="cp">#define MESH_EDIT_Z_STEP  0.025 </span><span class="c1">// (mm) Step size while manually probing Z axis.</span>
+  <span class="cp">#define LCD_PROBE_Z_RANGE 4     </span><span class="c1">// (mm) Z Range centered on Z_MIN_POS for LCD Z adjustment</span>
+  <span class="c1">//#define MESH_EDIT_MENU        // Add a menu to edit mesh points</span>
+<span class="cp">#endif</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="conf_advanced.html" class="btn btn-neutral float-right" title="Расширенные настройки Marlin" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="conf_temperature.html" class="btn btn-neutral" title="Температурные настройки" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, MeltyMinds(c).
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/language_data.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

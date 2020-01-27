@@ -1,22 +1,15 @@
 MeltyDIY
 ========
 
-Guides
-------
-
 .. toctree::
-   :maxdepth: 2
+   :caption: Guides
+   :titlesonly:
+   :maxdepth: 4
 
    Guides/Melty-AssemblingGuide
-   Guides/Melty-MarlinConfiguration
+   Configure/conf_index
    Guides/Melty-Calibration
+   Guides/Melty-Troubleshooting
 
-Индекс
-------
-
-* :ref:`genindex`
-
-.. toctree::
-   :maxdepth: 2
-
-   includeme
+* :ref:`BOM`
+* :ref:`glossary`

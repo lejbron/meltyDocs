@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Калибровка MeltyDIY &mdash; melty 1 documentation</title>
+  <title>Troubleshooting &mdash; melty 1 documentation</title>
   
 	
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
@@ -38,8 +38,7 @@
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="melty 1 documentation" href="../index.html"/>
-        <link rel="next" title="Troubleshooting" href="Melty-Troubleshooting.html"/>
-        <link rel="prev" title="Расширенные настройки Marlin" href="../Configure/conf_advanced.html"/> 
+        <link rel="prev" title="Калибровка MeltyDIY" href="Melty-Calibration.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -96,8 +95,8 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="Melty-AssemblingGuide.html">Инструкция по сборке MeltyDIY</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Configure/conf_index.html">Настройка <code class="docutils literal notranslate"><span class="pre">Marlin</span></code></a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Калибровка MeltyDIY</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Melty-Troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Melty-Calibration.html">Калибровка MeltyDIY</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Troubleshooting</a></li>
 </ul>
 
             
@@ -142,7 +141,7 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Калибровка MeltyDIY</li>
+      <li>Troubleshooting</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -159,8 +158,15 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="meltydiy">
-<h1>Калибровка MeltyDIY<a class="headerlink" href="#meltydiy" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="troubleshooting">
+<h1>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="buzzer">
+<h2>Отключить Buzzer<a class="headerlink" href="#buzzer" title="Permalink to this headline">¶</a></h2>
+<p>В файле <code class="code docutils literal notranslate"><span class="pre">pins_MKS_GEN_12.h</span></code> изменить следующую константу:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#define BEEPER_PIN       -1</span>
+</pre></div>
+</div>
+</div>
 </div>
 
 
@@ -170,10 +176,8 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="Melty-Troubleshooting.html" class="btn btn-neutral float-right" title="Troubleshooting" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
-      
-        <a href="../Configure/conf_advanced.html" class="btn btn-neutral" title="Расширенные настройки Marlin" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="Melty-Calibration.html" class="btn btn-neutral" title="Калибровка MeltyDIY" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
