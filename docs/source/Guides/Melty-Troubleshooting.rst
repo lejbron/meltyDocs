@@ -4,6 +4,8 @@ Troubleshooting
 Отключить Buzzer
 ----------------
 
-pins_MKS_GEN_12.h:
+В файле :code:`pins_MKS_GEN_12.h` изменить следующую константу:
 
-#define BEEPER_PIN       -1
+.. code-block:: c++
+
+  #define BEEPER_PIN       -1

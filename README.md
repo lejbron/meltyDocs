@@ -1,1 +1,3 @@
-# meltyDocs
+This project was created to put up together all stuff according to homemade version of Ultimaker Original.
+All information you can find here is non-commercial and has only one goal - to simplify assembling process and streamline all necessary staff for printer usage.
+I will be truly happy if this information can be useful for the community, please feel free to contact me if you have any questions according to this project.
