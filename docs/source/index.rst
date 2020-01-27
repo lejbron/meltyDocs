@@ -5,11 +5,15 @@ Guides
 ------
 
 .. toctree::
-   :maxdepth: 2
+   :titlesonly:
+   :maxdepth: 6
 
    Guides/Melty-AssemblingGuide
-   Guides/Melty-MarlinConfiguration
+   Guides/Conf/Melty-MarlinConfiguration
+   Guides/Conf/Melty-MarlinConfiguration_adv
    Guides/Melty-Calibration
+   Guides/Melty-Troubleshooting
+   data/Melty-BOM
 
 Индекс
 ------
