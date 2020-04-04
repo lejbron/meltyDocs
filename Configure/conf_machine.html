@@ -173,33 +173,65 @@
 <h1>Настройка маханических параметров<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="id2">
 <h2>Концевые выключатели<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<p>Измените согласно коду ниже.</p>
-<p>Используемые на плате порты</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#define USE_XMIN_PLUG</span>
-<span class="cp">#define USE_YMAX_PLUG</span>
-<span class="cp">#define USE_ZMAX_PLUG</span>
-</pre></div>
-</div>
-<p>Инвертирование направления</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#define X_MIN_ENDSTOP_INVERTING true </span><span class="c1">// Set to true to invert the logic of the endstop.</span>
-<span class="cp">#define Y_MIN_ENDSTOP_INVERTING false </span><span class="c1">// Set to true to invert the logic of the endstop.</span>
-<span class="cp">#define Z_MIN_ENDSTOP_INVERTING false </span><span class="c1">// Set to true to invert the logic of the endstop.</span>
-<span class="cp">#define X_MAX_ENDSTOP_INVERTING false </span><span class="c1">// Set to true to invert the logic of the endstop.</span>
-<span class="cp">#define Y_MAX_ENDSTOP_INVERTING false </span><span class="c1">// Set to true to invert the logic of the endstop.</span>
-<span class="cp">#define Z_MAX_ENDSTOP_INVERTING false </span><span class="c1">// Set to true to invert the logic of the endstop.</span>
-<span class="cp">#define Z_MIN_PROBE_ENDSTOP_INVERTING false </span><span class="c1">// Set to true to invert the logic of the probe.</span>
-</pre></div>
-</div>
+<p>В этом разделе необходимо задать используемые на плате порты:</p>
+<pre class="code C++ literal-block">
+<span class="comment single">// Specify here all the endstop connectors that are connected to any endstop or probe.
+// Almost all printers will be using one per axis. Probes will use one or more of the
+// extra connectors. Leave undefined any used for non-endstop and non-probe purposes.
+</span><span class="comment preproc">#define USE_XMIN_PLUG
+</span><span class="comment single">//#define USE_YMIN_PLUG
+//#define USE_ZMIN_PLUG
+//#define USE_XMAX_PLUG
+</span><span class="comment preproc">#define USE_YMAX_PLUG
+#define USE_ZMAX_PLUG</span>
+</pre>
+<p>При необходимости инвертировать конецевые выключатели измените следующие
+константы:</p>
+<pre class="code C++ literal-block">
+<span class="comment single">// Mechanical endstop with COM to ground and NC to Signal uses &quot;false&quot; here (most common setup).
+</span><span class="comment preproc">#define X_MIN_ENDSTOP_INVERTING true  </span><span class="comment single">// set to true to invert the logic of the endstop.
+</span><span class="comment preproc">#define Y_MIN_ENDSTOP_INVERTING true  </span><span class="comment single">// set to true to invert the logic of the endstop.
+</span><span class="comment preproc">#define Z_MIN_ENDSTOP_INVERTING true  </span><span class="comment single">// set to true to invert the logic of the endstop.
+</span><span class="comment preproc">#define X_MAX_ENDSTOP_INVERTING true  </span><span class="comment single">// set to true to invert the logic of the endstop.
+</span><span class="comment preproc">#define Y_MAX_ENDSTOP_INVERTING false </span><span class="comment single">// set to true to invert the logic of the endstop.
+</span><span class="comment preproc">#define Z_MAX_ENDSTOP_INVERTING false  </span><span class="comment single">// set to true to invert the logic of the endstop.
+</span><span class="comment preproc">#define Z_MIN_PROBE_ENDSTOP_INVERTING false </span><span class="comment single">// set to true to invert the logic of the probe.</span>
+</pre>
 </div>
 <div class="section" id="id3">
 <h2>Драйверы шаговых моторов<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
-<p>Зависит от <em>использумых драйверов</em>.</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#define X_DRIVER_TYPE  A4988</span>
-<span class="cp">#define Y_DRIVER_TYPE  A4988</span>
-<span class="cp">#define Z_DRIVER_TYPE  A4988</span>
-<span class="cp">#define E0_DRIVER_TYPE A4988</span>
-</pre></div>
-</div>
+<p>Необходимо непорседственно указать модель используемых дравйров шаговых
+двигателей <a class="reference internal" href="../Glossary.html#term-a4988"><span class="xref std std-term">A4988</span></a>.</p>
+<pre class="code C++ literal-block">
+<span class="comment multiline">/**
+ * Stepper Drivers
+ *
+ * These settings allow Marlin to tune stepper driver timing and enable advanced options for
+ * stepper drivers that support them. You may also override timing options in Configuration_adv.h.
+ *
+ * A4988 is assumed for unspecified drivers.
+ *
+ * Options: A4988, A5984, DRV8825, LV8729, L6470, TB6560, TB6600, TMC2100,
+ *          TMC2130, TMC2130_STANDALONE, TMC2208, TMC2208_STANDALONE,
+ *          TMC26X,  TMC26X_STANDALONE,  TMC2660, TMC2660_STANDALONE,
+ *          TMC2160, TMC2160_STANDALONE, TMC5130, TMC5130_STANDALONE,
+ *          TMC5160, TMC5160_STANDALONE
+ * :['A4988', 'A5984', 'DRV8825', 'LV8729', 'L6470', 'TB6560', 'TB6600', 'TMC2100', 'TMC2130', 'TMC2130_STANDALONE', 'TMC2160', 'TMC2160_STANDALONE', 'TMC2208', 'TMC2208_STANDALONE', 'TMC26X', 'TMC26X_STANDALONE', 'TMC2660', 'TMC2660_STANDALONE', 'TMC5130', 'TMC5130_STANDALONE', 'TMC5160', 'TMC5160_STANDALONE']
+ */</span>
+<span class="comment preproc">#define X_DRIVER_TYPE  A4988
+#define Y_DRIVER_TYPE  A4988
+#define Z_DRIVER_TYPE  A4988
+</span><span class="comment single">//#define X2_DRIVER_TYPE A4988
+//#define Y2_DRIVER_TYPE A4988
+//#define Z2_DRIVER_TYPE A4988
+//#define Z3_DRIVER_TYPE A4988
+</span><span class="comment preproc">#define E0_DRIVER_TYPE A4988
+</span><span class="comment single">//#define E1_DRIVER_TYPE A4988
+//#define E2_DRIVER_TYPE A4988
+//#define E3_DRIVER_TYPE A4988
+//#define E4_DRIVER_TYPE A4988
+//#define E5_DRIVER_TYPE A4988</span>
+</pre>
 </div>
 <div class="section" id="id4">
 <h2>Настройка перемещения по осям<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
@@ -228,78 +260,164 @@
 <p>Количество шагов: (200*16)/(2*4) = 400</p>
 </li>
 </ul>
+<pre class="code C++ literal-block">
+<span class="comment multiline">/**
+ * Default Axis Steps Per Unit (steps/mm)
+ * Override with M92
+ *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4[, E5]]]]]
+ */</span>
+<span class="comment preproc">#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 500 }</span>
+</pre>
 </div>
 </div>
 </div>
 <div class="section" id="id6">
 <h2>Ограничение максимальной скорости перемещения<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#define DEFAULT_MAX_FEEDRATE          {300, 300, 5, 25}    </span><span class="c1">// (mm/sec)</span>
-</pre></div>
-</div>
+<pre class="code C++ literal-block">
+<span class="comment multiline">/**
+ * Default Max Feed Rate (mm/s)
+ * Override with M203
+ *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4[, E5]]]]]
+ */</span>
+<span class="comment preproc">#define DEFAULT_MAX_FEEDRATE          { 200, 200, 5, 25 }</span>
+</pre>
 </div>
 <div class="section" id="id7">
 <h2>Ускорение перемещения по осям<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#define DEFAULT_MAX_ACCELERATION      { 2000, 2000, 100, 10000 }</span>
-
-<span class="cp">#define DEFAULT_ACCELERATION          2000    </span><span class="c1">// X, Y, Z and E acceleration for printing moves</span>
-<span class="cp">#define DEFAULT_RETRACT_ACCELERATION  2000    </span><span class="c1">// E acceleration for retracts</span>
-<span class="cp">#define DEFAULT_TRAVEL_ACCELERATION   2000    </span><span class="c1">// X, Y, Z acceleration for travel (non printing) moves</span>
-</pre></div>
-</div>
+<pre class="code C++ literal-block">
+<span class="comment multiline">/**
+ * Default Max Acceleration (change/s) change = mm/s
+ * (Maximum start speed for accelerated moves)
+ * Override with M201
+ *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4[, E5]]]]]
+ */</span>
+<span class="comment preproc">#define DEFAULT_MAX_ACCELERATION      { 1500, 1500, 100, 10000 }</span>
+</pre>
 </div>
 <div class="section" id="id8">
 <h2>Изменение направления вращения моторов<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
-<p>При необходимости изменить напрвление мотора используйте следующие константы:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#define INVERT_X_DIR false</span>
-<span class="cp">#define INVERT_Y_DIR true</span>
-<span class="cp">#define INVERT_Z_DIR false</span>
-
-<span class="cp">#define INVERT_E0_DIR false</span>
-</pre></div>
-</div>
+<p>При необходимости изменить напрвление моторов измените следующие константы:</p>
+<pre class="code C++ literal-block">
+<span class="comment single">// Invert the stepper direction. Change (or reverse the motor connector) if an axis goes the wrong way.
+</span><span class="comment preproc">#define INVERT_X_DIR true
+#define INVERT_Y_DIR false
+#define INVERT_Z_DIR true</span>
+</pre>
 </div>
 <div class="section" id="homing">
 <h2>Homing<a class="headerlink" href="#homing" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#define X_HOME_DIR -1</span>
-<span class="cp">#define Y_HOME_DIR 1</span>
-<span class="cp">#define Z_HOME_DIR 1</span>
-</pre></div>
-</div>
+<pre class="code C++ literal-block">
+<span class="comment single">// Direction of endstops when homing; 1=MAX, -1=MIN
+// :[-1,1]
+</span><span class="comment preproc">#define X_HOME_DIR -1
+#define Y_HOME_DIR 1
+#define Z_HOME_DIR 1</span>
+</pre>
 </div>
 <div class="section" id="id9">
 <h2>Указание размера области печати<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#define X_BED_SIZE 190</span>
-<span class="cp">#define Y_BED_SIZE 190</span>
-
-<span class="cp">#define X_MIN_POS 0</span>
-<span class="cp">#define Y_MIN_POS 0</span>
-<span class="cp">#define Z_MIN_POS 0</span>
-<span class="cp">#define X_MAX_POS X_BED_SIZE</span>
-<span class="cp">#define Y_MAX_POS Y_BED_SIZE</span>
-<span class="cp">#define Z_MAX_POS 200</span>
-</pre></div>
-</div>
+<pre class="code C++ literal-block">
+<span class="comment single">// The size of the print bed
+</span><span class="comment preproc">#define X_BED_SIZE 190
+#define Y_BED_SIZE 190
+</span>
+<span class="comment single">// Travel limits (mm) after homing, corresponding to endstop positions.
+</span><span class="comment preproc">#define X_MIN_POS 0
+#define Y_MIN_POS 0
+#define Z_MIN_POS 0
+#define X_MAX_POS X_BED_SIZE
+#define Y_MAX_POS Y_BED_SIZE
+#define Z_MAX_POS 209</span>
+</pre>
 </div>
 <div class="section" id="id10">
 <h2>Отступ по оси Z<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#define HOTEND_OFFSET_Z { 0.0, 1.3 }</span>
-</pre></div>
-</div>
+<pre class="code C++ literal-block">
+<span class="comment single">// Offset of the extruders (uncomment if using more than one and relying on firmware to position when changing).
+// The offset has to be X=0, Y=0 for the extruder 0 hotend (default extruder).
+// For the other hotends it is their distance from the extruder 0 hotend.
+//#define HOTEND_OFFSET_X {0.0, 20.00} // (mm) relative X-offset for each nozzle
+//#define HOTEND_OFFSET_Y {0.0, 5.00}  // (mm) relative Y-offset for each nozzle
+</span><span class="comment preproc">#define HOTEND_OFFSET_Z { 0.0, 1.3 }   </span><span class="comment single">// (mm) relative Z-offset for each nozzle</span>
+</pre>
 </div>
 <div class="section" id="automatic-bed-leveling">
 <h2>Automatic Bed Leveling<a class="headerlink" href="#automatic-bed-leveling" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li>#define PROBE_MANUALLY (878)</li>
-<li>#define MESH_BED_LEVELING (1209)</li>
-<li>#define LCD_BED_LEVELING (1332)</li>
+<li>Первый шаг:</li>
 </ol>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#if ENABLED(LCD_BED_LEVELING)</span>
-  <span class="cp">#define MESH_EDIT_Z_STEP  0.025 </span><span class="c1">// (mm) Step size while manually probing Z axis.</span>
-  <span class="cp">#define LCD_PROBE_Z_RANGE 4     </span><span class="c1">// (mm) Z Range centered on Z_MIN_POS for LCD Z adjustment</span>
-  <span class="c1">//#define MESH_EDIT_MENU        // Add a menu to edit mesh points</span>
-<span class="cp">#endif</span>
+<div class="code C++ highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/**</span>
+ <span class="o">*</span> <span class="n">The</span> <span class="s2">&quot;Manual Probe&quot;</span> <span class="n">provides</span> <span class="n">a</span> <span class="n">means</span> <span class="n">to</span> <span class="n">do</span> <span class="s2">&quot;Auto&quot;</span> <span class="n">Bed</span> <span class="n">Leveling</span> <span class="n">without</span> <span class="n">a</span> <span class="n">probe</span><span class="o">.</span>
+ <span class="o">*</span> <span class="n">Use</span> <span class="n">G29</span> <span class="n">repeatedly</span><span class="p">,</span> <span class="n">adjusting</span> <span class="n">the</span> <span class="n">Z</span> <span class="n">height</span> <span class="n">at</span> <span class="n">each</span> <span class="n">point</span> <span class="k">with</span> <span class="n">movement</span> <span class="n">commands</span>
+ <span class="o">*</span> <span class="ow">or</span> <span class="p">(</span><span class="k">with</span> <span class="n">LCD_BED_LEVELING</span><span class="p">)</span> <span class="n">the</span> <span class="n">LCD</span> <span class="n">controller</span><span class="o">.</span>
+ <span class="o">*/</span>
+<span class="c1">#define PROBE_MANUALLY</span>
 </pre></div>
 </div>
+<ol class="arabic simple" start="2">
+<li>Второй шаг:</li>
+</ol>
+<pre class="code C++ literal-block">
+<span class="comment single">//===========================================================================
+//=============================== Bed Leveling ==============================
+//===========================================================================
+// &#64;section calibrate
+</span>
+<span class="comment multiline">/**
+ * Choose one of the options below to enable G29 Bed Leveling. The parameters
+ * and behavior of G29 will change depending on your selection.
+ *
+ *  If using a Probe for Z Homing, enable Z_SAFE_HOMING also!
+ *
+ * - AUTO_BED_LEVELING_3POINT
+ *   Probe 3 arbitrary points on the bed (that aren't collinear)
+ *   You specify the XY coordinates of all 3 points.
+ *   The result is a single tilted plane. Best for a flat bed.
+ *
+ * - AUTO_BED_LEVELING_LINEAR
+ *   Probe several points in a grid.
+ *   You specify the rectangle and the density of sample points.
+ *   The result is a single tilted plane. Best for a flat bed.
+ *
+ * - AUTO_BED_LEVELING_BILINEAR
+ *   Probe several points in a grid.
+ *   You specify the rectangle and the density of sample points.
+ *   The result is a mesh, best for large or uneven beds.
+ *
+ * - AUTO_BED_LEVELING_UBL (Unified Bed Leveling)
+ *   A comprehensive bed leveling system combining the features and benefits
+ *   of other systems. UBL also includes integrated Mesh Generation, Mesh
+ *   Validation and Mesh Editing systems.
+ *
+ * - MESH_BED_LEVELING
+ *   Probe a grid manually
+ *   The result is a mesh, suitable for large or uneven beds. (See BILINEAR.)
+ *   For machines without a probe, Mesh Bed Leveling provides a method to perform
+ *   leveling in steps so you can manually adjust the Z height at each grid-point.
+ *   With an LCD controller the process is guided step-by-step.
+ */</span>
+<span class="comment single">//#define AUTO_BED_LEVELING_3POINT
+//#define AUTO_BED_LEVELING_LINEAR
+//#define AUTO_BED_LEVELING_BILINEAR
+//#define AUTO_BED_LEVELING_UBL
+</span><span class="comment preproc">#define MESH_BED_LEVELING</span>
+</pre>
+<ol class="arabic simple" start="3">
+<li>Третий шаг:</li>
+</ol>
+<pre class="code C++ literal-block">
+<span class="comment multiline">/**
+ * Add a bed leveling sub-menu for ABL or MBL.
+ * Include a guided procedure if manual probing is enabled.
+ */</span>
+<span class="comment preproc">#define LCD_BED_LEVELING
+</span>
+<span class="comment preproc">#if ENABLED(LCD_BED_LEVELING)
+</span>  <span class="comment preproc">#define MBL_Z_STEP  0.025 </span><span class="comment single">// (mm) Step size while manually probing Z axis.
+</span>  <span class="comment preproc">#define LCD_PROBE_Z_RANGE 4     </span><span class="comment single">// (mm) Z Range centered on Z_MIN_POS for LCD Z adjustment
+</span>  <span class="comment single">//#define MESH_EDIT_MENU        // Add a menu to edit mesh points
+</span><span class="comment preproc">#endif</span>
+</pre>
 </div>
 </div>
 

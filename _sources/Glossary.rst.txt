@@ -20,6 +20,9 @@
   |EEPROM|
     Electrically Erasable Programmable Read-Only Memory
 
+  |A4988|
+    Драйвер для шагового двигателя nema17
+
 
 .. |Marlin| raw:: html
 
@@ -40,3 +43,8 @@
 
   <a href="https://marlinfw.org/docs/features/eeprom.html" target="_blank">
   EEPROM</a>
+
+.. |A4988| raw:: html
+
+  <a href="https://3d-diy.ru/wiki/arduino-moduli/drajver-shagovogo-dvigatelya-a4988/" target="_blank">
+  A4988</a>
