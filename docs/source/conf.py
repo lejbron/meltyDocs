@@ -86,6 +86,10 @@ html_static_path = ['_static']
 #
 # html_sidebars = {}
 
+rst_epilog = """
+.. |marlinR2D2| replace:: D:\Docs\SharedProjects\DIY\3D\Marlin_r2d2\Marlin
+"""
+
 #---sphinx-themes-----
 html_theme = "ydoc_theme"
 html_logo = "_images/main/web_logo.png"

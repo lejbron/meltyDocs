@@ -10,6 +10,9 @@ if "%SPHINXBUILD%" == "" (
 set SOURCEDIR=source
 set BUILDDIR=../../meltyDocs_ghpages
 
+set REPLACER=D:\Docs\LocalData\pathReplacer\pathReplacer.py
+set PATH_JSON=path_variables.json
+
 if "%1" == "" goto help
 
 %SPHINXBUILD% >NUL 2>NUL
@@ -25,7 +28,14 @@ if errorlevel 9009 (
 	exit /b 1
 )
 
+py.exe %REPLACER% -j %PATH_JSON% -o replace
 %SPHINXBUILD% -M %1 %SOURCEDIR% %BUILDDIR% %SPHINXOPTS%
+py.exe %REPLACER% -j %PATH_JSON% -o clean
+cd %BUILDDIR%/html 
+git add . 
+git commit -m "rebuilt docs"
+git push origin gh-pages
+
 goto end
 
 :help
