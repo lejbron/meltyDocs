@@ -9,3 +9,13 @@ Troubleshooting
 .. code-block:: c++
 
   #define BEEPER_PIN       -1
+
+
+Перечень типичных проблем
+=========================
+
+.. csv-table:: **Проблемы при печати**
+ :header: "Краткое описание", "Bad level<br>Ajust temp"
+ :widths: 4, 4
+
+ "Первый слой", ""
