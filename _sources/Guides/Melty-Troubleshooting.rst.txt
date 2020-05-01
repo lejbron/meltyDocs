@@ -16,9 +16,10 @@ Troubleshooting
 
 .. csv-table:: **Проблемы при печати**
  :header: "Краткое описание", "Способы решения"
+ :escape: /
  :widths: 4, 4
 
- "Первый слой", "#. Bad level""#. Ajust temp"
+ "Первый слой", "#. Bad level/#. Ajust temp"
 
 
 .. list-table:: Sample list table
