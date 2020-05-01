@@ -18,4 +18,4 @@ Troubleshooting
  :header: "Краткое описание", "Способы решения"
  :widths: 4, 4
 
- "Первый слой", "* Bad level \* Ajust temp"
+ "Первый слой", "* Bad level /* Ajust temp"
