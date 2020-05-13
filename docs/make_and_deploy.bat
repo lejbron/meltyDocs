@@ -31,6 +31,10 @@ if errorlevel 9009 (
 py.exe %REPLACER% -j %PATH_JSON% -o replace
 %SPHINXBUILD% -M %1 %SOURCEDIR% %BUILDDIR% %SPHINXOPTS%
 py.exe %REPLACER% -j %PATH_JSON% -o clean
+cd %BUILDDIR%/html 
+git add . 
+git commit -m "rebuilt docs"
+git push origin gh-pages
 
 goto end
 
